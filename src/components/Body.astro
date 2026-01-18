@@ -1,0 +1,98 @@
+---
+
+---
+
+<section class="section">
+  <div class="content site-container">
+    <h1 class="greeting">Hi, good morning <span class="wave">👋</span></h1>
+    <p class="lead">
+      I’m Jeremy, a web developer with a background in design and a passion for UX.
+    </p>
+    <div class="body">
+      <p>
+        The path I have taken over the last twenty years has led me to approach web development with
+        a wide perspective. Many of my colleagues have seen me as the “glue” that keeps the team
+        together.
+      </p>
+      <p>
+        I thrive at methodically hashing out ideas to build interactions that just make sense to
+        users. I am well seasoned with over twenty years in the industry.
+      </p>
+      <p>
+        I want to personally thank you for stopping by and visiting my website. Other things you
+        might want to do around here are <a href="/work">check out my work</a>, learn more <a
+          href="/about">about me</a
+        > or <a href="/contact">get in touch</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    min-height: 100vh;
+    position: relative;
+    display: block;
+    background-color: #fff;
+    background-image: url("/images/hero-texture.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    isolation: isolate;
+    padding-top: 6rem; /* leave room for header */
+    container-type: inline-size;
+  }
+
+  .section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(255 255 255 / 60%), rgb(255 255 255 / 85%));
+    pointer-events: none;
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem var(--container-padding) 6rem;
+  }
+  .content .site-container {
+    padding: 0;
+  }
+
+  .greeting {
+    font-size: var(--font-size-large);
+    margin: 0 0 1rem;
+  }
+  .lead {
+    font-size: var(--font-size-large);
+    margin: 0 0 1.25rem;
+    line-height: 1.05;
+  }
+  .body {
+    max-width: var(--max-width);
+    color: var(--muted);
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+  }
+  .body a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  /* Container query: adjust sizes when container is wide */
+  @container (min-width:60ch) {
+    .greeting {
+      font-size: var(--font-size-large);
+    }
+    .lead {
+      font-size: var(--font-size-large);
+    }
+    .body {
+      font-size: var(--font-size-large);
+    }
+  }
+
+  .wave {
+    display: inline-block;
+  }
+</style>

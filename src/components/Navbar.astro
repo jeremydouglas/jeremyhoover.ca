@@ -1,0 +1,43 @@
+---
+import ProfileInfo from "./Profile.astro";
+import Nav from "./Nav.astro";
+---
+
+<header class="header" role="banner">
+  <div class="inner">
+    <img class="avatar" src="/images/profile.svg" alt="Jeremy Hoover" />
+    <ProfileInfo />
+    <Nav />
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 1.25rem var(--container-padding);
+    z-index: 60;
+    pointer-events: auto;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 2px solid rgb(0 0 0 / 6%);
+  }
+
+  /* Nav component handles its own styles */
+</style>

@@ -1,0 +1,25 @@
+{
+  "name": "src",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "lint:css": "stylelint \"src/**/*.{css,astro}\" --fix",
+    "lint:fix": "npm run lint:css",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,css,astro,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,css,astro,json,md}\"",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.16.9"
+  },
+  "devDependencies": {
+    "postcss-html": "^1.8.1",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^32.0.0"
+  }
+}
