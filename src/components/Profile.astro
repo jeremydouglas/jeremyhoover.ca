@@ -2,21 +2,44 @@
 
 ---
 
-<div class="meta">
-  <div class="name">jeremy hoover</div>
-  <div class="role">ux developer<br />hamilton, ontario, canada</div>
+<div class="container">
+  <img class="avatar" src="/images/headshot.png" alt="Jeremy Hoover" />
+  <div class="meta">
+    <div class="name">jeremy hoover</div>
+    <div class="role">ux developer</div>
+    <div class="location">hamilton, ontario, canada</div>
+  </div>
 </div>
 
 <style>
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .avatar {
+    aspect-ratio: 1 / 1;
+    width: 80px;
+    border-radius: 999px;
+    object-fit: cover;
+  }
   .meta {
     font-size: 0.85rem;
     line-height: 1;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr;
   }
   .name {
     text-transform: lowercase;
-    font-weight: 700;
+    font-weight: 500;
   }
   .role {
     color: var(--muted);
+    font-size: 0.75rem;
+  }
+  .location {
+    color: var(--muted);
+    font-size: 0.75rem;
   }
 </style>

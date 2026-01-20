@@ -1,10 +1,11 @@
 ---
-
+import Container from "./Container.astro";
 ---
 
 <section class="section">
-  <div class="content site-container">
-    <h1 class="greeting">Hi, good morning <span class="wave">👋</span></h1>
+  <Container>
+  <div class="content">
+    <h1 class="greeting">Hello, good morning <span class="wave">👋</span></h1>
     <p class="lead">
       I’m Jeremy, a web developer with a background in design and a passion for UX.
     </p>
@@ -26,30 +27,19 @@
       </p>
     </div>
   </div>
+  </Container>
 </section>
 
 <style>
   .section {
-    min-height: 100vh;
-    position: relative;
-    display: block;
-    background-color: #fff;
     background-image: url("/images/hero-texture.svg");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    isolation: isolate;
-    padding-top: 6rem; /* leave room for header */
+    padding-top: 6rem;
     container-type: inline-size;
   }
 
-  .section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgb(255 255 255 / 60%), rgb(255 255 255 / 85%));
-    pointer-events: none;
-  }
   .content {
     position: relative;
     z-index: 2;
@@ -62,17 +52,17 @@
   .greeting {
     font-size: var(--font-size-large);
     margin: 0 0 1rem;
+    font-weight: normal;
   }
   .lead {
     font-size: var(--font-size-large);
     margin: 0 0 1.25rem;
-    line-height: 1.05;
+    font-weight: normal;
   }
   .body {
     max-width: var(--max-width);
     color: var(--muted);
     font-size: var(--font-size-large);
-    line-height: 1.8;
   }
   .body a {
     color: var(--accent);
