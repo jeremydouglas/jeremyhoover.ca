@@ -1,0 +1,45 @@
+version: "1.0"
+metadata:
+  name: "astro-site-assistant"
+  description: "Guides AI/code-gen to produce small, testable Astro components and pages for this site."
+environment:
+  framework: "astro"
+  language: "ts"
+  testRunner: "vitest"
+  packageManager: "pnpm"
+style:
+  quotes: "single"
+  semi: false
+  indent: 2
+  maxLineLength: 100
+  cssMethod: "global-css"
+formatting:
+  formatCommand: "pnpm run format"
+  formatOnSave: true
+naming:
+  componentFileCase: "PascalCase"
+  componentNameCase: "PascalCase"
+  pageFileCase: "kebab-case"
+  testFileSuffix: ".test.ts"
+patterns:
+  componentTemplate: |
+    Props: define an explicit interface and export default a small functional Astro component.
+    Keep components single-purpose, under 120 LOC, and import shared CSS from src/styles/global.css.
+tests:
+  required: true
+  testExample: "Use Vitest and @testing-library/astro; include a minimal render assertion."
+prompts:
+  newComponent: |
+    Create a new Astro component named {{name}} in src/components. Use TypeScript (.astro). Follow repo styles: single quotes, no semicolons, PascalCase filename and component. Export props as an interface, include minimal accessible markup, import src/styles/global.css, and add a matching Vitest unit test at src/components/{{name}}/{{name}}.test.ts. Keep component under 120 lines.
+do_not_generate:
+  - ".env*"
+  - "secrets/**/*"
+  - "large-media/*"
+enforcement:
+  lintCommand: "pnpm run lint"
+  testCommand: "pnpm run test"
+  requirePassingCI: true
+automation:
+  precommit: "lint-staged (format + eslint:fix + stylelint:fix)"
+notes: |
+  When uncertain, add a TODO and open a draft PR rather than guessing large architectural changes.

@@ -1,0 +1,13 @@
+{
+  "AI: New Astro Component": {
+    "prefix": "ai:component",
+    "body": [
+      "// AI: Use .ai-assistant.yml rules to generate component: ${1:Name}",
+      "// Create a PascalCase Astro component in src/components/${1:Name}.astro",
+      "// Use TypeScript, export props as an interface, import src/styles/global.css",
+      "// Keep under 120 lines and add a Vitest unit test at src/components/${1:Name}/${1:Name}.test.ts",
+      ""
+    ],
+    "description": "Prompt AI to scaffold a new Astro component per repo assistant rules"
+  }
+}
