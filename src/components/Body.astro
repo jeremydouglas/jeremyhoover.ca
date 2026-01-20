@@ -5,7 +5,10 @@ import Container from './Container.astro'
 <section class="section">
   <Container>
     <div class="content">
-      <h1 class="greeting">Hello, good morning <span class="wave">👋</span></h1>
+      <h1 class="greeting">
+        Hello, good <span class="time-greeting" id="time-greeting">morning</span>
+        <span class="wave">👋</span>
+      </h1>
       <p class="lead">
         I’m Jeremy, a web developer with a background in design and a passion for UX.
       </p>
@@ -29,6 +32,20 @@ import Container from './Container.astro'
     </div>
   </Container>
 </section>
+
+<script is:inline>
+  const greetingEl = document.getElementById('time-greeting')
+
+  if (greetingEl) {
+    const hour = new Date().getHours()
+
+    let timeOfDay = 'morning'
+    if (hour >= 12 && hour < 18) timeOfDay = 'afternoon'
+    if (hour >= 18 || hour < 5) timeOfDay = 'evening'
+
+    greetingEl.textContent = timeOfDay
+  }
+</script>
 
 <style>
   .section {
