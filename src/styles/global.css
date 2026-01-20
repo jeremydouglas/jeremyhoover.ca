@@ -3,13 +3,13 @@
   --muted: #66625f;
   --accent: #000;
   --max-width: 900px;
-  --container-padding: 3rem;
-  --page-gap: 2.25rem;
+  --container-padding: 48px;
+  --page-gap: 36px;
 
   /* Font size scale */
   --font-size-small: 1rem;
   --font-size-medium: 1.125rem;
-  --font-size-large: 36px;
+  --font-size-large: 2.25rem;
 
 }
 

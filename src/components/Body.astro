@@ -53,14 +53,14 @@ import Container from './Container.astro'
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    padding-top: 6rem;
+    padding-top: 96px;
     container-type: inline-size;
   }
 
   .content {
     position: relative;
     z-index: 2;
-    padding: 6rem var(--container-padding) 6rem;
+    padding: 96px var(--container-padding) 96px;
   }
 
   .content .site-container {
@@ -69,13 +69,13 @@ import Container from './Container.astro'
 
   .greeting {
     font-size: var(--font-size-large);
-    margin: 0 0 1rem;
+    margin: 0 0 16px;
     font-weight: normal;
   }
 
   .lead {
     font-size: var(--font-size-large);
-    margin: 0 0 1.25rem;
+    margin: 0 0 20px;
     font-weight: normal;
   }
 
@@ -91,7 +91,7 @@ import Container from './Container.astro'
   }
 
   /* Container query: adjust sizes when container is wide */
-  @container (min-width:60ch) {
+  @container (min-width: 60ch) {
     .greeting {
       font-size: var(--font-size-large);
     }

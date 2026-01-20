@@ -13,6 +13,9 @@ style:
   indent: 2
   maxLineLength: 100
   cssMethod: "global-css"
+  sizingUnits:
+    fontSize: "rem"
+    otherSizing: "px"
 formatting:
   formatCommand: "pnpm run format"
   formatOnSave: true
