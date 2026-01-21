@@ -12,14 +12,25 @@ import Nav from './Nav.astro'
 
 <style>
   .header {
-    padding: 20px var(--container-padding);
+    padding: var(--space-lg) var(--container-padding);
+    container-name: 'header';
+    container-type: inline-size;
   }
 
   .inner {
+    align-content: center;
     display: flex;
-    align-items: center;
-    gap: 16px;
-    max-width: var(--max-width);
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--space-md);
     margin: 0 auto;
+    max-width: var(--space-11xl);
+
+    @container (min-width: 700px) {
+      gap: var(--space-xl);
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
   }
 </style>

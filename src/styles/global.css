@@ -1,26 +1,63 @@
 :root {
-  --bg: #f5f5f4;
-  --muted: #66625f;
-  --accent: #000;
-  --max-width: 900px;
-  --container-padding: 48px;
-  --page-gap: 36px;
+  --pallet-grey-100: #e6e6e6;
+  --pallet-grey-200: #cccccc;
+  --pallet-grey-300: #b3b3b3;
+  --pallet-grey-400: #999999;
+  --pallet-grey-500: #808080;
+  --pallet-grey-600: #666666;
+  --pallet-grey-700: #4d4d4d;
+  --pallet-grey-800: #333333;
+  --pallet-grey-900: #1a1a1a;
+
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+  --space-5xl: 192px;
+  --space-6xl: 256px;
+  --space-7xl: 384px;
+  --space-8xl: 512px;
+  --space-9xl: 640px;
+  --space-10xl: 768px;
+  --space-11xl: 896px;
+  --space-12xl: 1024px;
+
+  --bg: var(--pallet-grey-100);
+  --muted: var(--pallet-grey-700);
+  --accent: var(--pallet-grey-900);
+  --max-width: var(--space-11xl);
+
+  --container-padding: var(--space-lg);
+  --page-gap: var(--space-md);
 
   /* Font size scale */
-  --font-size-small: 1rem;
-  --font-size-medium: 1.125rem;
-  --font-size-large: 2.25rem;
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.75rem;
+  --font-size-xl: 2.125rem;
 
+  @media (min-width: 768px) {
+    --container-padding: var(--space-xl);
+    --page-gap: var(--space-lg);
+  }
 }
 
 /* Reset & base */
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family:

@@ -10,18 +10,25 @@
 
 <style>
   .nav {
-    margin-left: auto;
     display: flex;
-    gap: 18px;
+    justify-content: center;
+    gap: var(--space-md);
+
+    @container (min-width: 700px) {
+      gap: var(--space-xl);
+      margin-left: auto;
+      justify-content: flex-end;
+    }
   }
 
   .nav a {
-    font-size: 0.9rem;
-    color: var(--muted);
+    font-size: var(--font-size-sm);
+    color: var(--pallet-grey-700);
+    transition: color 0.3s ease;
     text-decoration: none;
   }
 
   .nav a:hover {
-    text-decoration: underline;
+    color: var(--pallet-grey-900);
   }
 </style>

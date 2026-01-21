@@ -5,10 +5,10 @@ import Container from './Container.astro'
 <section class="section">
   <Container>
     <div class="content">
-      <h1 class="greeting">
+      <p class="greeting">
         Hello, good <span class="time-greeting" id="time-greeting">morning</span>
         <span class="wave">👋</span>
-      </h1>
+      </p>
       <p class="lead">
         I’m Jeremy, a web developer with a background in design and a passion for UX.
       </p>
@@ -49,60 +49,43 @@ import Container from './Container.astro'
 
 <style>
   .section {
+    background-color: var(--pallet-grey-100);
     background-image: url('/images/hero-texture.svg');
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    padding-top: 96px;
+    background-position: center top;
+    padding: var(--space-4xl) 0;
     container-type: inline-size;
   }
 
   .content {
     position: relative;
-    z-index: 2;
-    padding: 96px var(--container-padding) 96px;
+    padding: 0 var(--container-padding);
+    font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-xl));
   }
 
-  .content .site-container {
-    padding: 0;
+  .content p {
+    margin: 0 0 0.75em;
   }
 
   .greeting {
-    font-size: var(--font-size-large);
-    margin: 0 0 16px;
+    font-size: inherit;
     font-weight: normal;
   }
 
   .lead {
-    font-size: var(--font-size-large);
-    margin: 0 0 20px;
+    font-size: inherit;
     font-weight: normal;
   }
 
   .body {
     max-width: var(--max-width);
     color: var(--muted);
-    font-size: var(--font-size-large);
+    font-size: inherit;
   }
 
   .body a {
     color: var(--accent);
     text-decoration: underline;
-  }
-
-  /* Container query: adjust sizes when container is wide */
-  @container (min-width: 60ch) {
-    .greeting {
-      font-size: var(--font-size-large);
-    }
-
-    .lead {
-      font-size: var(--font-size-large);
-    }
-
-    .body {
-      font-size: var(--font-size-large);
-    }
   }
 
   .wave {
