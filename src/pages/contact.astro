@@ -14,10 +14,12 @@ import Container from '../components/Container.astro'
 
       <div class="contact-info">
         <div class="contact-method">
-          <h2>Email</h2>
-          <p>
-            <a href="mailto:hello@example.com">hello@example.com</a>
-          </p>
+          <form action="https://form-api.yourname.workers.dev/submit" method="POST">
+            <input type="text" name="name" required />
+            <input type="email" name="email" required />
+            <textarea name="message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
         </div>
 
         <div class="contact-method">
@@ -45,13 +47,13 @@ import Container from '../components/Container.astro'
   h1 {
     font-size: 2.5rem;
     margin-bottom: 16px;
-    color: var(--pallet-grey-900);
+    color: var(--palette-grey-900);
   }
 
   .intro {
     font-size: 1.25rem;
     line-height: 1.6;
-    color: var(--pallet-grey-700);
+    color: var(--palette-grey-700);
     margin-bottom: 48px;
     max-width: 600px;
   }
@@ -62,7 +64,7 @@ import Container from '../components/Container.astro'
   }
 
   .contact-method {
-    background: var(--pallet-grey-100);
+    background: var(--palette-grey-100);
     border-radius: 12px;
     padding: 32px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -71,17 +73,17 @@ import Container from '../components/Container.astro'
   .contact-method h2 {
     font-size: 1.25rem;
     margin-bottom: 12px;
-    color: var(--pallet-grey-900);
+    color: var(--palette-grey-900);
   }
 
   .contact-method p {
     font-size: 1rem;
     line-height: 1.7;
-    color: var(--pallet-grey-700);
+    color: var(--palette-grey-700);
   }
 
   .contact-method a {
-    color: var(--pallet-primary, #0066cc);
+    color: var(--palette-primary, #0066cc);
     text-decoration: none;
   }
 
