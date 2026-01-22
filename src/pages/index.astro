@@ -4,34 +4,32 @@ import Container from '../components/Container.astro'
 ---
 
 <BaseLayout title="Jeremy Hoover | UX Developer, Frontend Developer">
-  <section class="section">
+  <section class="background">
     <Container>
       <div class="content">
-        <p class="greeting">
-          Hello, good <span class="time-greeting" id="time-greeting">morning</span>
+        <h1 class="text-display">
+          hello, good <span class="time-greeting" id="time-greeting">morning</span>
           <span class="wave">👋</span>
-        </p>
-        <p class="lead">
+        </h1>
+        <p class="text-display">
           I’m Jeremy, a web developer with a background in design and a passion for UX.
         </p>
-        <div class="body">
-          <p>
-            I’m into growing vegetables, playing guitar and building thoughtful user journeys that
-            seem to just make sense. Luckily, one of these three has been an employable skill, and
-            led to a career.
-          </p>
-          <p>
-            The path I have traveled since the early 2000s has led me to approach web development
-            with a wide perspective, bridging from design to focus on development. Many of my
-            colleagues have seen me as the “glue” that keeps the team together.
-          </p>
-          <p>
-            I appreciate that you have taken the time to stop by and visit my website. Other things
-            you might want to do around here are check out <a href="/work">my work</a>, learn more <a
-              href="/about">about me</a
-            > or <a href="/contact">get in touch</a>.
-          </p>
-        </div>
+        <p class="text-display">
+          I’m into growing vegetables, playing guitar and building thoughtful user journeys that
+          seem to just make sense. Luckily, one of these three has been an employable skill, and led
+          to a career.
+        </p>
+        <p class="text-display">
+          The path I have traveled since the early 2000s has led me to approach web development with
+          a wide perspective, bridging from design to focus on development. Many of my colleagues
+          have seen me as the “glue” that keeps the team together.
+        </p>
+        <p class="text-display">
+          I appreciate that you have taken the time to stop by and visit my website. Other things
+          you might want to do around here are check out <a href="/work">my work</a>, learn more <a
+            href="/about">about me</a
+          > or <a href="/contact">get in touch</a>.
+        </p>
       </div>
     </Container>
   </section>
@@ -52,47 +50,10 @@ import Container from '../components/Container.astro'
 </script>
 
 <style>
-  .section {
+  .background {
     background-color: var(--palette-grey-100);
     background-image: url('/images/hero-texture.svg');
     background-repeat: no-repeat;
     background-position: center top;
-    padding: var(--space-4xl) 0;
-    container-type: inline-size;
-  }
-
-  .content {
-    position: relative;
-    padding: 0 var(--container-padding);
-    font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-xl));
-  }
-
-  .content p {
-    margin: 0 0 0.75em;
-  }
-
-  .greeting {
-    font-size: inherit;
-    font-weight: normal;
-  }
-
-  .lead {
-    font-size: inherit;
-    font-weight: normal;
-  }
-
-  .body {
-    max-width: var(--max-width);
-    color: var(--muted);
-    font-size: inherit;
-  }
-
-  .body a {
-    color: var(--accent);
-    text-decoration: underline;
-  }
-
-  .wave {
-    display: inline-block;
   }
 </style>

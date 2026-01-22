@@ -36,51 +36,16 @@
   --page-gap: var(--space-md);
 
   /* Font size scale */
-  --font-size-xs: 0.875rem;
-  --font-size-sm: 1rem;
-  --font-size-md: 1.125rem;
-  --font-size-lg: 1.75rem;
-  --font-size-xl: 2.125rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.125rem;
 
   @media (min-width: 768px) {
     --container-padding: var(--space-xl);
     --page-gap: var(--space-lg);
   }
-}
-
-/* Reset & base */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background-color: var(--palette-grey-200);
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  background-image: linear-gradient(to bottom, var(--palette-grey-200), var(--palette-grey-100));
-  background-attachment: fixed;
-  margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial;
-  color: var(--accent);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
 }

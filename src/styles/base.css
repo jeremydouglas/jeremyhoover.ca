@@ -1,0 +1,36 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--palette-grey-200);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom, var(--palette-grey-200), var(--palette-grey-100));
+  background-attachment: fixed;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  color: var(--accent);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}

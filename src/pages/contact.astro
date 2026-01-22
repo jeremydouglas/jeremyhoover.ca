@@ -5,89 +5,36 @@ import Container from '../components/Container.astro'
 
 <BaseLayout title="Contact | Jeremy Hoover">
   <Container>
-    <section class="contact">
-      <h1>Get in Touch</h1>
-      <p class="intro">
-        Interested in working together? Have a question or just want to say hello? I'd love to hear
-        from you.
-      </p>
-
-      <div class="contact-info">
-        <div class="contact-method">
-          <form action="https://form-api.yourname.workers.dev/submit" method="POST">
-            <input type="text" name="name" required />
-            <input type="email" name="email" required />
-            <textarea name="message" required></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-
-        <div class="contact-method">
-          <h2>Social</h2>
-          <p>
-            Find me on LinkedIn, GitHub, or Twitter. Let's connect and collaborate on exciting
-            projects.
-          </p>
-        </div>
-
-        <div class="contact-method">
-          <h2>Location</h2>
-          <p>Based in Canada. Available for remote work and open to opportunities worldwide.</p>
-        </div>
+    <h1>get in touch</h1>
+    <p>
+      Interested in working together? Have a question or just want to say hello? I'd love to hear
+      from you. Choose a channel that works for you:
+    </p>
+    <div class="contactOptions">
+      <div>
+        <span class="label">Email</span>
+        <a href="mailto:hello@jeremyhoover.ca">hello@jeremyhoover.ca</a>
       </div>
-    </section>
+      <div>
+        <span class="label">X</span>
+        <a href="https://x.com/jeremydouglas">@jeremydouglas</a>
+      </div>
+      <div><span class="label">Discord</span> <code>.jeremydouglas</code></div>
+    </div>
   </Container>
 </BaseLayout>
 
 <style>
-  .contact {
-    padding: 80px 24px;
+  .contactOptions {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: var(--font-size-2xl);
+    flex-direction: column;
+    margin-top: var(--space-xl);
   }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-    color: var(--palette-grey-900);
-  }
-
-  .intro {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: var(--palette-grey-700);
-    margin-bottom: 48px;
-    max-width: 600px;
-  }
-
-  .contact-info {
-    display: grid;
-    gap: 32px;
-  }
-
-  .contact-method {
-    background: var(--palette-grey-100);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .contact-method h2 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    color: var(--palette-grey-900);
-  }
-
-  .contact-method p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--palette-grey-700);
-  }
-
-  .contact-method a {
-    color: var(--palette-primary, #0066cc);
-    text-decoration: none;
-  }
-
-  .contact-method a:hover {
-    text-decoration: underline;
+  .label {
+    display: inline-block;
+    width: 4em;
   }
 </style>
