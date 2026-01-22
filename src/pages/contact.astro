@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Container from '../components/Container.astro'
+---
+
+<BaseLayout title="Contact | Jeremy Hoover">
+  <Container>
+    <section class="contact">
+      <h1>Get in Touch</h1>
+      <p class="intro">
+        Interested in working together? Have a question or just want to say hello? I'd love to hear
+        from you.
+      </p>
+
+      <div class="contact-info">
+        <div class="contact-method">
+          <h2>Email</h2>
+          <p>
+            <a href="mailto:hello@example.com">hello@example.com</a>
+          </p>
+        </div>
+
+        <div class="contact-method">
+          <h2>Social</h2>
+          <p>
+            Find me on LinkedIn, GitHub, or Twitter. Let's connect and collaborate on exciting
+            projects.
+          </p>
+        </div>
+
+        <div class="contact-method">
+          <h2>Location</h2>
+          <p>Based in Canada. Available for remote work and open to opportunities worldwide.</p>
+        </div>
+      </div>
+    </section>
+  </Container>
+</BaseLayout>
+
+<style>
+  .contact {
+    padding: 80px 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: var(--pallet-grey-900);
+  }
+
+  .intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--pallet-grey-700);
+    margin-bottom: 48px;
+    max-width: 600px;
+  }
+
+  .contact-info {
+    display: grid;
+    gap: 32px;
+  }
+
+  .contact-method {
+    background: var(--pallet-grey-100);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .contact-method h2 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--pallet-grey-900);
+  }
+
+  .contact-method p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--pallet-grey-700);
+  }
+
+  .contact-method a {
+    color: var(--pallet-primary, #0066cc);
+    text-decoration: none;
+  }
+
+  .contact-method a:hover {
+    text-decoration: underline;
+  }
+</style>

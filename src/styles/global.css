@@ -53,12 +53,18 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--pallet-grey-200);
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
+  background-image: linear-gradient(to bottom, var(--pallet-grey-200), var(--pallet-grey-100));
+  background-attachment: fixed;
   margin: 0;
   font-family:
     system-ui,
