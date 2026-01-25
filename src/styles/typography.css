@@ -11,6 +11,17 @@ h6 {
   font-weight: 500;
 }
 
+h1 {
+  background-color: var(--palette-grey-100);
+  padding: 0.25em 0.6125em;
+  color: var(--palette-grey-700);
+  font-size: var(--font-size-xs);
+  text-box-trim: both;
+  text-box-edge: cap alphabetic;
+  display: inline-block;
+  letter-spacing: 0.0125em;
+}
+
 p + h2 {
   margin-top: var(--space-xl);
 }
