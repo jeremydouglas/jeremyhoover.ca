@@ -27,8 +27,9 @@
   --space-11xl: 896px;
   --space-12xl: 1024px;
 
-  --bg: var(--palette-grey-100);
-  --muted: var(--palette-grey-700);
+  --bg: #6D4B95;
+  --text: #ECDEFE;
+  --muted: #CDA8FF;
   --accent: var(--palette-grey-900);
   --max-width: var(--space-11xl);
 

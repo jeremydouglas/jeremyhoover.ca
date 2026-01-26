@@ -1,3 +1,7 @@
+body {
+  color: var(--text);
+}
+
 .text-display {
   font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-2xl));
 }

@@ -23,12 +23,12 @@
 
   .nav a {
     font-size: var(--font-size-sm);
-    color: var(--palette-grey-700);
+    color: var(--muted);
     transition: color 0.3s ease;
     text-decoration: none;
   }
 
   .nav a:hover {
-    color: var(--palette-grey-900);
+    color: color-mix(in oklab, var(--muted), var(--bg) 15%);
   }
 </style>

@@ -4,8 +4,7 @@
 }
 
 html {
-  background-color: var(--palette-grey-200);
-  background-image: linear-gradient(to bottom, var(--palette-grey-200), white);
+  background-color: var(--bg);
   background-size: cover;
 }
 
@@ -18,11 +17,14 @@ body {
     Roboto,
     "Helvetica Neue",
     Arial;
-  color: var(--accent);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   min-height: 100vh;
+  background-image: linear-gradient(150deg, color-mix(in srgb, var(--bg) 85%, transparent), color-mix(in srgb, var(--bg) 15%, transparent)), url("/images/bg-1.jpg");
+  background-size: auto;
+  background-position: center top;
 }
 
 a {
