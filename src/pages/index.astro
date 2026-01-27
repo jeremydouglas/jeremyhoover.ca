@@ -7,7 +7,7 @@ import Container from '../components/Container.astro'
   <section class="background">
     <Container>
       <p class="text-display">
-        Hello, good <span class="time-greeting" id="time-greeting">morning</span>
+        Hello, good <span class="time-greeting" id="time-greeting">day</span>
         <span class="wave">👋</span>
       </p>
       <p class="text-display">
@@ -31,15 +31,21 @@ import Container from '../components/Container.astro'
 </BaseLayout>
 
 <script is:inline>
-  const greetingEl = document.getElementById('time-greeting')
+  function updateGreeting() {
+    const greetingEl = document.getElementById('time-greeting')
 
-  if (greetingEl) {
-    const hour = new Date().getHours()
+    if (greetingEl) {
+      const hour = new Date().getHours()
 
-    let timeOfDay = 'morning'
-    if (hour >= 12 && hour < 18) timeOfDay = 'afternoon'
-    if (hour >= 18 || hour < 5) timeOfDay = 'evening'
+      let timeOfDay = 'day'
+      if (hour < 12) timeOfDay = 'morning'
+      if (hour >= 12 && hour < 18) timeOfDay = 'afternoon'
+      if (hour >= 18 || hour < 5) timeOfDay = 'evening'
 
-    greetingEl.textContent = timeOfDay
+      greetingEl.textContent = timeOfDay
+    }
   }
+
+  updateGreeting()
+  document.addEventListener('astro:page-load', updateGreeting)
 </script>
