@@ -16,14 +16,15 @@ h6 {
 }
 
 h1 {
-  background-color: var(--palette-grey-100);
-  padding: 0.25em 0.6125em;
-  color: var(--palette-grey-700);
+  background-color: color-mix(in srgb, var(--palette-grey-100) 50%, transparent 100%);
+  padding: 0.25em .875em;
+  color: var(--text);
   font-size: var(--font-size-xs);
   text-box-trim: both;
   text-box-edge: cap alphabetic;
   display: inline-block;
   letter-spacing: 0.0125em;
+  opacity: .75;
 }
 
 p + h2 {

@@ -3,16 +3,29 @@ import '../styles/settings.css'
 import '../styles/base.css'
 import '../styles/typography.css'
 import Navbar from '../components/Navbar.astro'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   title: string
 }
 
 const { title } = Astro.props
+
+const sequentialFade = {
+  forwards: {
+    old: [{ name: 'fadeOut', duration: '0.375s', fillMode: 'forwards' }],
+    new: [{ name: 'fadeIn', duration: '0.375s', delay: '0.375s', fillMode: 'backwards' }],
+  },
+  backwards: {
+    old: [{ name: 'fadeOut', duration: '0.375s', fillMode: 'forwards' }],
+    new: [{ name: 'fadeIn', duration: '0.375s', delay: '0.375s', fillMode: 'backwards' }],
+  },
+}
 ---
 
-<html lang="en">
+<html lang="en-CA" transition:name="root" transition:animate="none">
   <head>
+    <ClientRouter />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
@@ -22,10 +35,31 @@ const { title } = Astro.props
     <meta name="apple-mobile-web-app-title" content="Jeremy" />
     <link rel="manifest" href="/icons/site.webmanifest" />
     <title>{title}</title>
+    <script is:inline>
+      ;(function () {
+        const key = 'header-animated'
+        const nav = performance.getEntriesByType('navigation')[0]
+        if (nav && nav.type === 'reload') {
+          sessionStorage.removeItem(key)
+        }
+        if (sessionStorage.getItem(key)) {
+          document.documentElement.classList.add('skip-header-animation')
+        } else {
+          sessionStorage.setItem(key, 'true')
+        }
+
+        // Re-apply after view transitions
+        document.addEventListener('astro:after-swap', function () {
+          if (sessionStorage.getItem(key)) {
+            document.documentElement.classList.add('skip-header-animation')
+          }
+        })
+      })()
+    </script>
   </head>
   <body>
     <Navbar />
-    <main class="main">
+    <main class="main" transition:animate={sequentialFade}>
       <slot />
     </main>
   </body>

@@ -27,9 +27,16 @@
   --space-11xl: 896px;
   --space-12xl: 1024px;
 
-  --bg: #6D4B95;
-  --text: #ECDEFE;
-  --muted: #CDA8FF;
+  /* Purple */
+  /* --bg: #6D4B95; */
+  /* --text: #ECDEFE; */
+  /* --muted: #CDA8FF; */
+  
+  /* Dark blue */
+  --bg: #0D0F1D;
+  --text: #CCCCFF;
+  --muted: #A7B4FA;
+
   --accent: var(--palette-grey-900);
   --max-width: var(--space-11xl);
 

@@ -22,12 +22,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   min-height: 100vh;
-  background-image: linear-gradient(150deg, color-mix(in srgb, var(--bg) 85%, transparent), color-mix(in srgb, var(--bg) 15%, transparent)), url("/images/bg-1.jpg");
-  background-size: auto;
+  background-image: linear-gradient(150deg, color-mix(in srgb, var(--bg) 85%, transparent), color-mix(in srgb, var(--bg) 15%, transparent)), url("/images/bg-2.webp");
+  background-size: 2500px 1500px;
+  background-repeat: no-repeat;
   background-position: center top;
 }
 
 a {
   color: inherit;
   text-decoration: underline;
+}
+
+/* View transition keyframes */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }

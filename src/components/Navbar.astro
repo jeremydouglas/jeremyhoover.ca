@@ -3,7 +3,7 @@ import Profile from './Profile.astro'
 import Nav from './Nav.astro'
 ---
 
-<header class="header" role="banner">
+<header class="header" role="banner" transition:persist transition:animate="none">
   <div class="inner">
     <Profile />
     <Nav />
@@ -12,10 +12,23 @@ import Nav from './Nav.astro'
 
 <style>
   .header {
-    background-color: var(--bg);
+    background-image: linear-gradient(color-mix(in srgb, var(--bg) 50%, transparent), transparent);
     padding: var(--space-lg) var(--container-padding);
     container-name: 'header';
     container-type: inline-size;
+    filter: blur(5px);
+    animation: unblur 1s ease-out forwards;
+  }
+
+  @keyframes unblur {
+    from {
+      filter: blur(10px);
+      opacity: 0;
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
   }
 
   .inner {
@@ -33,5 +46,11 @@ import Nav from './Nav.astro'
       flex-wrap: nowrap;
       align-items: center;
     }
+  }
+
+  :global(.skip-header-animation) .header {
+    animation: none;
+    filter: none;
+    opacity: 1;
   }
 </style>

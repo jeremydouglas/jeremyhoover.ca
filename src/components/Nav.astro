@@ -1,12 +1,28 @@
 ---
-
+const currentPath = Astro.url.pathname
 ---
 
 <nav class="nav" aria-label="Primary">
-  <a href="/work">work</a>
-  <a href="/about">about</a>
-  <a href="/contact">contact</a>
+  <a href="/work" class:list={[{ active: currentPath === '/work' }]}>work</a>
+  <a href="/about" class:list={[{ active: currentPath === '/about' }]}>about</a>
+  <a href="/contact" class:list={[{ active: currentPath === '/contact' }]}>contact</a>
 </nav>
+
+<script>
+  function updateActiveNav() {
+    const path = window.location.pathname
+    document.querySelectorAll('.nav a').forEach((link) => {
+      const href = link.getAttribute('href')
+      if (href === path) {
+        link.classList.add('active')
+      } else {
+        link.classList.remove('active')
+      }
+    })
+  }
+
+  document.addEventListener('astro:after-swap', updateActiveNav)
+</script>
 
 <style>
   .nav {
@@ -22,13 +38,14 @@
   }
 
   .nav a {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     color: var(--muted);
     transition: color 0.3s ease;
     text-decoration: none;
   }
 
-  .nav a:hover {
-    color: color-mix(in oklab, var(--muted), var(--bg) 15%);
+  .nav a:hover,
+  .nav a.active {
+    color: color-mix(in rgba, var(--muted), var(--bg) 15%);
   }
 </style>
