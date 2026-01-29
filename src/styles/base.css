@@ -6,6 +6,8 @@
 html {
   background-color: var(--bg);
   background-size: cover;
+  scrollbar-gutter: stable both-edges;
+  overflow-y: auto;
 }
 
 body {
