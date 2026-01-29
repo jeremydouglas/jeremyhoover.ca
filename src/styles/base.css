@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   min-height: 100vh;
-  background-image: linear-gradient(150deg, color-mix(in srgb, var(--bg) 85%, transparent), color-mix(in srgb, var(--bg) 15%, transparent)), url("/images/bg-2.webp");
+  background-image: url("/images/bg.webp");
   background-size: 2500px 3500px;
   background-repeat: no-repeat;
   background-position: center top;
