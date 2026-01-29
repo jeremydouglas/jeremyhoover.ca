@@ -12,7 +12,8 @@ h6 {
 }
 
 h1 {
-  background-color: color-mix(in srgb, var(--palette-grey-100) 50%, transparent 100%);
+  background-color: color-mix(in srgb, var(--palette-grey-100) 19%, transparent 10%);
+  border-radius: 3px;
   padding: 0.25em .875em;
   color: var(--text);
   font-size: var(--font-size-xs);
