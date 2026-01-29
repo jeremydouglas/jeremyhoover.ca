@@ -2,15 +2,6 @@ body {
   color: var(--text);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 500;
-}
-
 h1 {
   background-color: color-mix(in srgb, var(--palette-grey-100) 19%, transparent 10%);
   border-radius: 3px;
@@ -26,13 +17,11 @@ h1 {
 
 .text-display {
   font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-2xl));
-  font-weight: 300;
   line-height: 1.7;
 }
 
 .text-display-xl {
   font-size: clamp(var(--font-size-xl), 2vw + 1rem, var(--font-size-3xl));
-  font-weight: 300;
   line-height: 1.7;
 }
 

@@ -1,4 +1,11 @@
 /* Reset & base */
+@font-face {
+  font-family: "InteviaRegular";
+  src: url("/webFonts/InteviaRegular/font.woff2") format("woff2"),
+    url("/webFonts/InteviaRegular/font.woff") format("woff");
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,6 +20,7 @@ html {
 body {
   margin: 0;
   font-family:
+    "InteviaRegular",
     system-ui,
     -apple-system,
     "Segoe UI",
