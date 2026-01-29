@@ -26,11 +26,13 @@ h1 {
 .text-display {
   font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-2xl));
   font-weight: 300;
+  line-height: 1.7;
 }
 
 .text-display-xl {
   font-size: clamp(var(--font-size-xl), 2vw + 1rem, var(--font-size-3xl));
   font-weight: 300;
+  line-height: 1.7;
 }
 
 p + h2 {
