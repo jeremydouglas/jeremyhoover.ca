@@ -2,10 +2,6 @@ body {
   color: var(--text);
 }
 
-.text-display {
-  font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-2xl));
-}
-
 h1,
 h2,
 h3,
@@ -25,6 +21,16 @@ h1 {
   display: inline-block;
   letter-spacing: 0.0125em;
   opacity: .75;
+}
+
+.text-display {
+  font-size: clamp(var(--font-size-lg), 2vw + 1rem, var(--font-size-2xl));
+  font-weight: 300;
+}
+
+.text-display-xl {
+  font-size: clamp(var(--font-size-xl), 2vw + 1rem, var(--font-size-3xl));
+  font-weight: 300;
 }
 
 p + h2 {
