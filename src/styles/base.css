@@ -24,10 +24,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   min-height: 100vh;
+  background: none;
+  position: relative;
+}
+
+/* Fixed background layer to prevent Safari repaint flicker during view transitions */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image: url("/images/bg.webp");
   background-size: 2500px 3500px;
   background-repeat: no-repeat;
   background-position: center top;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 a {
