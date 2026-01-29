@@ -31,7 +31,7 @@ body {
 /* Fixed background layer to prevent Safari repaint flicker during view transitions */
 body::before {
   content: '';
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   background-image: url("/images/bg.webp");
