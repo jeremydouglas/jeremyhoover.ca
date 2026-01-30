@@ -1,5 +1,5 @@
 ---
-const normalize = (path) => {
+const normalize = (path: string): string => {
   if (path === '/') return '/'
   return path.endsWith('/') ? path : `${path}/`
 }
@@ -12,27 +12,6 @@ const currentPath = normalize(Astro.url.pathname)
   <a href="/about/" class:list={[{ active: currentPath === '/about/' }]}>about</a>
   <a href="/contact/" class:list={[{ active: currentPath === '/contact/' }]}>contact</a>
 </nav>
-
-<script>
-  const normalize = (path) => {
-    if (path === '/') return '/'
-    return path.endsWith('/') ? path : `${path}/`
-  }
-
-  function updateActiveNav() {
-    const path = normalize(window.location.pathname)
-    document.querySelectorAll('.nav a').forEach((link) => {
-      const href = link.getAttribute('href')
-      if (href === path) {
-        link.classList.add('active')
-      } else {
-        link.classList.remove('active')
-      }
-    })
-  }
-
-  document.addEventListener('astro:after-swap', updateActiveNav)
-</script>
 
 <style>
   .nav {
