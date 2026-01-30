@@ -5,4 +5,5 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   // Used by GitHub Pages and sitemap generation
   site: 'https://jeremyhoover.ca',
+  trailingSlash: 'always',
 })

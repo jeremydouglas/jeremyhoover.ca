@@ -1,16 +1,26 @@
 ---
-const currentPath = Astro.url.pathname
+const normalize = (path) => {
+  if (path === '/') return '/'
+  return path.endsWith('/') ? path : `${path}/`
+}
+
+const currentPath = normalize(Astro.url.pathname)
 ---
 
 <nav class="nav" aria-label="Primary">
-  <a href="/work" class:list={[{ active: currentPath === '/work' }]}>work</a>
-  <a href="/about" class:list={[{ active: currentPath === '/about' }]}>about</a>
-  <a href="/contact" class:list={[{ active: currentPath === '/contact' }]}>contact</a>
+  <a href="/work/" class:list={[{ active: currentPath === '/work/' }]}>work</a>
+  <a href="/about/" class:list={[{ active: currentPath === '/about/' }]}>about</a>
+  <a href="/contact/" class:list={[{ active: currentPath === '/contact/' }]}>contact</a>
 </nav>
 
 <script>
+  const normalize = (path) => {
+    if (path === '/') return '/'
+    return path.endsWith('/') ? path : `${path}/`
+  }
+
   function updateActiveNav() {
-    const path = window.location.pathname
+    const path = normalize(window.location.pathname)
     document.querySelectorAll('.nav a').forEach((link) => {
       const href = link.getAttribute('href')
       if (href === path) {
