@@ -37,21 +37,31 @@ const sequentialFade = {
     <title>{title}</title>
     <script is:inline>
       ;(function () {
-        const key = 'header-animated'
+        const headerKey = 'header-animated'
+        const mainKey = 'main-animated'
         const nav = performance.getEntriesByType('navigation')[0]
         if (nav && nav.type === 'reload') {
-          sessionStorage.removeItem(key)
+          sessionStorage.removeItem(headerKey)
+          sessionStorage.removeItem(mainKey)
         }
-        if (sessionStorage.getItem(key)) {
+        if (sessionStorage.getItem(headerKey)) {
           document.documentElement.classList.add('skip-header-animation')
         } else {
-          sessionStorage.setItem(key, 'true')
+          sessionStorage.setItem(headerKey, 'true')
+        }
+        if (sessionStorage.getItem(mainKey)) {
+          document.documentElement.classList.add('skip-main-animation')
+        } else {
+          sessionStorage.setItem(mainKey, 'true')
         }
 
         // Re-apply after view transitions
         document.addEventListener('astro:after-swap', function () {
-          if (sessionStorage.getItem(key)) {
+          if (sessionStorage.getItem(headerKey)) {
             document.documentElement.classList.add('skip-header-animation')
+          }
+          if (sessionStorage.getItem(mainKey)) {
+            document.documentElement.classList.add('skip-main-animation')
           }
         })
       })()
